@@ -1,1 +1,1 @@
-const { test, expect} = "@playwright/test";
+import { test, expect} from "@playwright/test"

@@ -1,4 +1,4 @@
-const {test, expect} = "@playwright/test";
+import { test, expect} from "@playwright/test"
 
 test("TC-01 Testing navigation", async( { page } ) => {
     page.goto('https://www.shoppersstop.com/');
