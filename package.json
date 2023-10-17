@@ -9,7 +9,7 @@
     "url": "git+https://github.com/ks1912/playwright.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kunal Singh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ks1912/playwright/issues"
@@ -17,5 +17,8 @@
   "homepage": "https://github.com/ks1912/playwright#readme",
   "devDependencies": {
     "@playwright/test": "^1.32.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }

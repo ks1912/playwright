@@ -1,0 +1,137 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\playwright.config.js",
+    "rootDir": "C:/Users/kunal.s/OneDrive - Fujiyama Software Solutions Pvt Ltd/Documents/Playwright/playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/kunal.s/OneDrive - Fujiyama Software Solutions Pvt Ltd/Documents/Playwright/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/kunal.s/OneDrive - Fujiyama Software Solutions Pvt Ltd/Documents/Playwright/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 10000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.39.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "homepage_test.spec.js",
+      "file": "homepage_test.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Homepage Test",
+          "file": "homepage_test.spec.js",
+          "line": 11,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-01 Testing login functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 10000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "failed",
+                      "duration": 1498,
+                      "error": {
+                        "message": "loginPage.loginToHomepage is not a function",
+                        "stack": "TypeError: loginPage.loginToHomepage is not a function\n    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:14:21",
+                        "location": {
+                          "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
+                          "column": 21,
+                          "line": 14
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m   test(\u001b[32m\"TC-01 Testing login functionality\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mloginToHomepage(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mBASE_URL\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_NAME\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_PASS\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
+                            "column": 21,
+                            "line": 14
+                          },
+                          "message": "TypeError: loginPage.loginToHomepage is not a function\n\n\u001b[0m \u001b[90m 12 |\u001b[39m   test(\u001b[32m\"TC-01 Testing login functionality\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mloginToHomepage(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mBASE_URL\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_NAME\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_PASS\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:14:21\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-16T05:17:42.398Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
+                        "column": 21,
+                        "line": 14
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8ee57253404d2f4ca5cd-b42464db78ea67a2d2bd",
+              "file": "homepage_test.spec.js",
+              "line": 12,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2023-10-16T05:17:40.471Z",
+    "duration": 8562.289999999999
+  }
+}
