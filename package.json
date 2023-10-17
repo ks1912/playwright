@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/ks1912/playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.32.2"
+    "@cucumber/cucumber": "^10.0.0",
+    "@playwright/test": "^1.32.2",
+    "faker": "^6.6.6"
   }
 }
