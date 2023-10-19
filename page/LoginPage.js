@@ -6,14 +6,14 @@ exports.LoginPage = class LoginPage {
     this.emailId = (user_email) => this.page.locator("#email").fill(user_email);
     this.password = (pass) => this.page.locator("#password").fill(pass);
     this.signInButton = this.page.getByRole('//input[contains(@id,"login")]');
-    this.navigation = (baseURL) => this.page.goto(baseURL);
+    this.navigation = (baseURL) => this.page.goto(`${baseURL}/`);
   }
 
   loginToPage = async (baseURL, userId, password) => {
     await this.navigation(baseURL);
     await this.loginButton.click();
     await this.emailId(userId);
-    await this.password(password)
+    await this.password(password);
     await this.signInButton.click();
   };
-}
+};

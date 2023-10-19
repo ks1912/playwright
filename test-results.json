@@ -83,36 +83,40 @@
                     {
                       "workerIndex": 0,
                       "status": "failed",
-                      "duration": 1498,
+                      "duration": 6039,
                       "error": {
-                        "message": "loginPage.loginToHomepage is not a function",
-                        "stack": "TypeError: loginPage.loginToHomepage is not a function\n    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:14:21",
+                        "message": "locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0",
+                        "stack": "Error: locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0\n    at LoginPage.loginToPage (C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js:17:29)\n    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:15:5",
                         "location": {
-                          "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
-                          "column": 21,
-                          "line": 14
+                          "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
+                          "column": 29,
+                          "line": 17
                         },
-                        "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m   test(\u001b[32m\"TC-01 Testing login functionality\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mloginToHomepage(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mBASE_URL\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_NAME\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_PASS\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\LoginPage.js:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39memailId(userId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpassword(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignInButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m   }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
-                            "column": 21,
-                            "line": 14
+                            "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
+                            "column": 29,
+                            "line": 17
                           },
-                          "message": "TypeError: loginPage.loginToHomepage is not a function\n\n\u001b[0m \u001b[90m 12 |\u001b[39m   test(\u001b[32m\"TC-01 Testing login functionality\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mloginToHomepage(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mBASE_URL\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_NAME\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m       process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mU_PASS\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:14:21\u001b[22m"
+                          "message": "Error: locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0\n\n\u001b[90m   at \u001b[39m..\\page\\LoginPage.js:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39memailId(userId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpassword(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignInButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m   }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m\u001b[0m\n\n\u001b[2m    at LoginPage.loginToPage (C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js:17:29)\u001b[22m\n\u001b[2m    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:15:5\u001b[22m"
                         }
                       ],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "https://andersen-webcp-wdev.wtsparadigm.com bedahe1803@mugadget.com Rayjohn@123\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-16T05:17:42.398Z",
+                      "startTime": "2023-10-19T16:45:39.367Z",
                       "attachments": [],
                       "errorLocation": {
-                        "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js",
-                        "column": 21,
-                        "line": 14
+                        "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
+                        "column": 29,
+                        "line": 17
                       }
                     }
                   ],
@@ -131,7 +135,7 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2023-10-16T05:17:40.471Z",
-    "duration": 8562.289999999999
+    "startTime": "2023-10-19T16:45:37.850Z",
+    "duration": 10861.988
   }
 }
