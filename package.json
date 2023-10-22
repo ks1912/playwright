@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ks1912/playwright.git"

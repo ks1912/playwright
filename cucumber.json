@@ -1,3 +1,11 @@
 {
-    "default":{}
+  "default": {
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  },
+  "path": ["src/test/features/*.feature"],
+  "publishQuite": true,
+  "dryRun": true,
+  "require": ["src/test/steps/*.js"]
 }
