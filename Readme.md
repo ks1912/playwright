@@ -10,7 +10,22 @@ We will be using a `cucumber.json` file to override the default configuration pr
 
 Update the `cucumber.json` configuration file with the following changes:
 
-1. Add a `default` object:
+1. Add a `default and formator` object:
 
    ```json
-   "default": {}
+   "default": {
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  }
+
+2. Add a `path of feature file` object:
+
+   ```json
+   "path": ["src/test/features/*.feature"],
+
+3. Add a `steps defination file` object:
+
+   ```json
+   "require": ["src/test/steps/*.js"]
+
