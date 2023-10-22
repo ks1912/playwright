@@ -1,15 +1,16 @@
-<h1>Cucumber with playwright</h1>
+# Cucumber with Playwright
 
-<ol>
-    <li>
-        <p> Using cucumber.json <br/>
-            We will be using cuccumber.json file to overright the existing/ default configuration that cucumber gives when we will use it.
-        </p>
-    </li>
-    <li>
-        <p> Update cucumber.json and add two thing<br/>
-            First one is default like <i>"default":{}</i><br />
-            Secong one is path like <i>"path":["Relaive path of feature file"]</i>
-        </p>
-    </li>
-</ol>
+This project demonstrates how to use Cucumber with Playwright for automated testing.
+
+## Configuration
+
+We will be using a `cucumber.json` file to override the default configuration provided by Cucumber when using it with Playwright.
+
+### Step 1: Create or Update `cucumber.json`
+
+Update the `cucumber.json` configuration file with the following changes:
+
+1. Add a `default` object:
+
+   ```json
+   "default": {}
