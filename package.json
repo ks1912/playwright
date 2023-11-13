@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "run-headless": "npx playwright test",
+    "run-headed": "npx playwright test --headed",
+    "codegen": "npx dotenv -e .env node npx playwright codegen"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ks1912/playwright.git"
@@ -16,6 +20,10 @@
   },
   "homepage": "https://github.com/ks1912/playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.32.2"
+    "@playwright/test": "^1.32.2",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "cross-var": "^1.1.0"
   }
 }

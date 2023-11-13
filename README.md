@@ -1,9 +1,10 @@
 # playwright
 
-
 <h4>API Testing </br>
-BDD Framework
+API Framework
   <ol>
-    <li>Using cuccmber</li>
+    <li>Jenkins</li>
+    <li>Git</li>
+    <li>Docker</li>
   </ol>
 </h4>

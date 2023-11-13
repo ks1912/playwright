@@ -1,0 +1,13 @@
+{
+    "login":{
+        "userName":["Username"],
+        "password":["Password"]
+    },
+    "signup":{
+        "userName":[""],
+        "password":[""],
+        "userName":[""],
+        "password":[""],
+        "password":[""]
+    }
+}
