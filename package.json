@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "npx playwright test",
+    "run-headless": "npx playwright test",
     "run-headed": "npx playwright test --headed"
   },
   "repository": {

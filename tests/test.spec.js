@@ -1,13 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-test("TC-01", "Navigate to Hompage", async () => {
+test("TC-01 Navigate to Hompage", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveURL(/bookcart/);
   await expect(page.locator("div.brand-title")).toHaveText(/Book Cart/);
   await expect(page.getByText("Login")).toBeVisible();
 });
 
-test("TC-02", "Navigate to Loginpage", async () => {
+test("TC-02 Navigate to Loginpage", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Login")).toBeVisible();
   await page.getByText("Login").click();
