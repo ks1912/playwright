@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "run": "npx playwright test",
+    "run-headed": "npx playwright test --headed"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ks1912/playwright.git"
