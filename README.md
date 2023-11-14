@@ -4,6 +4,6 @@
 <h4>API Testing </br>
 BDD Framework
   <ol>
-    <li>Using cuccmber</li>
+    <li>Using Azure</li>
   </ol>
 </h4>
