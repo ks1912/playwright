@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define your environment variables
+        MY_ENV_VAR = 'value'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Use SSH to checkout code from GitHub repository
+                sshagent(['your-ssh-credentials']) {
+                    // Replace with your SSH key credentials ID
+                    git branch: 'main', credentialsId: '', url: 'git@github.com:yourusername/yourrepository.git'
+                    // Make sure SSH key is added to GitHub access
+                }
+            }
+        }
+
+        // stage('Build and Test') {
+        //     steps {
+        //         // Run your build and test commands here with environment variables
+        //         sh "export MY_ENV_VAR=${env.MY_ENV_VAR} && npm install"
+        //         sh 'npm test' // Replace with your test command
+        //     }
+        // }
+
+        stage('Build Docker Image') {
+            steps {
+                // Build the Docker image
+                script {
+                    dockerImage = docker.build('yourusername/yourimage:latest', '.')
+                }
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                // Log in to Docker Hub
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                        // Push the Docker image to Docker Hub
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            // If the pipeline succeeds, perform cleanup
+            script {
+                dockerImage.remove()
+            }
+        }
+    }
+}

@@ -17,5 +17,8 @@ steps:
 
   - script: |
       npm install
+    displayName: "Install the dependices"
+
+  - script: |
       npm run headless
-    displayName: "npm install and build"
+    displayName: "Execute the tests"
