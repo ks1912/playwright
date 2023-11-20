@@ -3,7 +3,7 @@
     "configFile": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\playwright.config.js",
     "rootDir": "C:/Users/kunal.s/OneDrive - Fujiyama Software Solutions Pvt Ltd/Documents/Playwright/playwright/tests",
     "forbidOnly": false,
-    "fullyParallel": true,
+    "fullyParallel": false,
     "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
@@ -50,27 +50,27 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.39.0",
+    "version": "1.40.0",
     "workers": 4,
     "webServer": null
   },
   "suites": [
     {
-      "title": "homepage_test.spec.js",
-      "file": "homepage_test.spec.js",
+      "title": "login_page.spec.js",
+      "file": "login_page.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Homepage Test",
-          "file": "homepage_test.spec.js",
-          "line": 11,
+          "title": "API TESTING",
+          "file": "login_page.spec.js",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "TC-01 Testing login functionality",
-              "ok": false,
+              "title": "TC-02, Add items to cart",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -82,51 +82,30 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "failed",
-                      "duration": 6039,
-                      "error": {
-                        "message": "locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0",
-                        "stack": "Error: locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0\n    at LoginPage.loginToPage (C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js:17:29)\n    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:15:5",
-                        "location": {
-                          "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
-                          "column": 29,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\LoginPage.js:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39memailId(userId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpassword(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignInButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m   }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
-                            "column": 29,
-                            "line": 17
-                          },
-                          "message": "Error: locator.click: Error while parsing selector `//input[contains(@id,\"login\")]` - unexpected symbol \"/\" at position 0\n\n\u001b[90m   at \u001b[39m..\\page\\LoginPage.js:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39memailId(userId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpassword(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msignInButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m   }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m\u001b[0m\n\n\u001b[2m    at LoginPage.loginToPage (C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js:17:29)\u001b[22m\n\u001b[2m    at C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\tests\\homepage_test.spec.js:15:5\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 976,
+                      "errors": [],
                       "stdout": [
                         {
-                          "text": "https://andersen-webcp-wdev.wtsparadigm.com bedahe1803@mugadget.com Rayjohn@123\n"
+                          "text": "[\n  {\n    bookId: \u001b[33m2\u001b[39m,\n    title: \u001b[32m'HP2'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m235\u001b[39m,\n    coverFileName: \u001b[32m'9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m3\u001b[39m,\n    title: \u001b[32m'HP3'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m213\u001b[39m,\n    coverFileName: \u001b[32m'c63ade52-3f90-41fa-980a-1136b6ad2128HP3.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m4\u001b[39m,\n    title: \u001b[32m'HP4'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m321\u001b[39m,\n    coverFileName: \u001b[32m'9d31690d-3b1d-4faa-a1d2-3a680a935008HP4.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m5\u001b[39m,\n    title: \u001b[32m'HP5'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m432\u001b[39m,\n    coverFileName: \u001b[32m'8f5f8b64-794c-4dbb-b369-6cc9cc762ce0HP5.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m6\u001b[39m,\n    title: \u001b[32m'HP6'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m433\u001b[39m,\n    coverFileName: \u001b[32m'cff3d5ee-71f3-43d8-8625-33abcd48659eHP6.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m7\u001b[39m,\n    title: \u001b[32m'HP7'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m325\u001b[39m,\n    coverFileName: \u001b[32m'4ec2ffb6-b21a-43ce-bf90-04d56ec72644HP7.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m15\u001b[39m,\n    title: \u001b[32m'HP1'\u001b[39m,\n    author: \u001b[32m'JKR'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m342\u001b[39m,\n    coverFileName: \u001b[32m'f73b4e21-28fe-4d3f-895b-d8a553b7ba6fHP1.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m18\u001b[39m,\n    title: \u001b[32m'Rot & Ruin'\u001b[39m,\n    author: \u001b[32m'Jonathan Maberry '\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m123\u001b[39m,\n    coverFileName: \u001b[32m'eb592aa9-831e-47ed-aea8-fa79d7d316097157310.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m21\u001b[39m,\n    title: \u001b[32m'Slayer'\u001b[39m,\n    author: \u001b[32m' Kiersten White'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m1234\u001b[39m,\n    coverFileName: \u001b[32m'6d91b7b0-b8d1-41ad-a0ef-65e2324fc1b3Slayer.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m28\u001b[39m,\n    title: \u001b[32m'Çürük'\u001b[39m,\n    author: \u001b[32m'Jonathan '\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m1211\u001b[39m,\n    coverFileName: \u001b[32m'cbf832c1-cd01-47b3-93fa-62995a7dca1118799023.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m29\u001b[39m,\n    title: \u001b[32m'Roomies'\u001b[39m,\n    author: \u001b[32m'Christina Lauren '\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m334\u001b[39m,\n    coverFileName: \u001b[32m'267e7cea-d66e-4e00-a220-c0ee7e70fdaf33322.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m30\u001b[39m,\n    title: \u001b[32m'A Princess in Theory'\u001b[39m,\n    author: \u001b[32m'Alyssa Cole'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m545\u001b[39m,\n    coverFileName: \u001b[32m'42314d38-bbc8-40ed-b890-612ea45791d735271238.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m31\u001b[39m,\n    title: \u001b[32m'Robbie'\u001b[39m,\n    author: \u001b[32m'Ella Frank'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m345\u001b[39m,\n    coverFileName: \u001b[32m'2141f7a1-e6b8-4d88-91e3-0d3a141117be39086215.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m32\u001b[39m,\n    title: \u001b[32m'Wicked and the Wallflower'\u001b[39m,\n    author: \u001b[32m'Sarah MacLean'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m512\u001b[39m,\n    coverFileName: \u001b[32m'75f8ca57-6b59-43aa-ae05-f51a7429dd5836301036.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m33\u001b[39m,\n    title: \u001b[32m'Dr. Strange Beard'\u001b[39m,\n    author: \u001b[32m'Penny Reid'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m312\u001b[39m,\n    coverFileName: \u001b[32m'9749b4d2-d8be-4e9b-b7ea-d437a3a9bf0e136395874.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m34\u001b[39m,\n    title: \u001b[32m'The Simple Wild'\u001b[39m,\n    author: \u001b[32m'K.A. Tucker'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m111\u001b[39m,\n    coverFileName: \u001b[32m'b868eb26-f12c-4dcf-ba19-03e0d6cafb8d36373564.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m35\u001b[39m,\n    title: \u001b[32m'Marriage of Inconvenience'\u001b[39m,\n    author: \u001b[32m'Penny Reid'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m345\u001b[39m,\n    coverFileName: \u001b[32m'8d3a0352-270b-405d-b8bc-ee0f59179cbf36395764.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m36\u001b[39m,\n    title: \u001b[32m'The Hookup'\u001b[39m,\n    author: \u001b[32m'Kristen Ashley '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m434\u001b[39m,\n    coverFileName: \u001b[32m'dc785e9f-a753-42f7-a87e-fda5e97ce67bqq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m37\u001b[39m,\n    title: \u001b[32m'Birthday Girl'\u001b[39m,\n    author: \u001b[32m'Penelope Douglas '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m441\u001b[39m,\n    coverFileName: \u001b[32m'7616f5e9-a42a-4268-8ff0-4f77547dcc9crr.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m38\u001b[39m,\n    title: \u001b[32m'Red Rising'\u001b[39m,\n    author: \u001b[32m'Pierce Brown'\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m512\u001b[39m,\n    coverFileName: \u001b[32m'24cd89a7-737f-490e-8c8e-cbeac7eac054tt.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m39\u001b[39m,\n    title: \u001b[32m'Before We Were Yours'\u001b[39m,\n    author: \u001b[32m'Lisa Wingate '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m123\u001b[39m,\n    coverFileName: \u001b[32m'15396272-e3ec-4b1c-97d0-d2e841898f55aa.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m40\u001b[39m,\n    title: \u001b[32m'A Dance with Dragons'\u001b[39m,\n    author: \u001b[32m'George R.R. Martin'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m412\u001b[39m,\n    coverFileName: \u001b[32m'63df0288-6589-4e4c-8a68-def0bbf72714qa.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m41\u001b[39m,\n    title: \u001b[32m'The Hate U Give'\u001b[39m,\n    author: \u001b[32m'Angie Thomas'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m122\u001b[39m,\n    coverFileName: \u001b[32m'3d894fa1-8746-4443-b244-99624cc39f1fq1we.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m42\u001b[39m,\n    title: \u001b[32m'All the Light We Cannot See'\u001b[39m,\n    author: \u001b[32m'Anthony Doerr '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m542\u001b[39m,\n    coverFileName: \u001b[32m'e49d1ff8-3bad-49fc-b1f1-496fc7fef07aq2.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m43\u001b[39m,\n    title: \u001b[32m'The Help'\u001b[39m,\n    author: \u001b[32m'Kathryn Stockett'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m124\u001b[39m,\n    coverFileName: \u001b[32m'921ff624-bcdb-4b48-8e5b-c3f34078bd11q3.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m44\u001b[39m,\n    title: \u001b[32m'A Court of Mist and Fury'\u001b[39m,\n    author: \u001b[32m'Sarah J. Maas '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m645\u001b[39m,\n    coverFileName: \u001b[32m'7996d691-beb6-4c41-82f0-4a3f23641db626073150.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m45\u001b[39m,\n    title: \u001b[32m'The Martian'\u001b[39m,\n    author: \u001b[32m'Andy Weir'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m321\u001b[39m,\n    coverFileName: \u001b[32m'5b7162d6-2780-461b-be6f-e4debac083ad18007564.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m46\u001b[39m,\n    title: \u001b[32m'Catching Fire'\u001b[39m,\n    author: \u001b[32m'Suzanne Collins'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m658\u001b[39m,\n    coverFileName: \u001b[32m'6df4a30a-e8a1-467d-9da6-d826989a9c606148028.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m47\u001b[39m,\n    title: \u001b[32m'The Fault in Our Stars'\u001b[39m,\n    author: \u001b[32m' John Green '\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m346\u001b[39m,\n    coverFileName: \u001b[32m'a99a994c-b5d5-4f17-807f-33bcd1003505q3333.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m48\u001b[39m,\n    title: \u001b[32m'11/22/63'\u001b[39m,\n    author: \u001b[32m'Stephen King'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m556\u001b[39m,\n    coverFileName: \u001b[32m'ab486162-5053-46ec-a89a-fdf2b686ff6310644930.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m72\u001b[39m,\n    title: \u001b[32m'City of Girls'\u001b[39m,\n    author: \u001b[32m'Elizabeth Gilbert '\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m1222\u001b[39m,\n    coverFileName: \u001b[32m'e94cf1e2-a7bf-47e1-aed8-b8931aeee6b342135029.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m73\u001b[39m,\n    title: \u001b[32m'Mrs. Everything'\u001b[39m,\n    author: \u001b[32m'Jennifer Weiner '\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m4444\u001b[39m,\n    coverFileName: \u001b[32m'07492ea6-09fb-46e9-8c9b-8a8f51afe989qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m74\u001b[39m,\n    title: \u001b[32m'Magic for Liars'\u001b[39m,\n    author: \u001b[32m'Sarah Gailey '\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m777\u001b[39m,\n    coverFileName: \u001b[32m'7a904907-be5d-42c3-af15-6b770e5bd0d0qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m75\u001b[39m,\n    title: \u001b[32m'Fix Her Up'\u001b[39m,\n    author: \u001b[32m'Tessa Bailey '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m3333\u001b[39m,\n    coverFileName: \u001b[32m'1561f3e0-c461-4273-864c-9e67c620a490qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m76\u001b[39m,\n    title: \u001b[32m'Like a Love Story'\u001b[39m,\n    author: \u001b[32m'Abdi Nazemian '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m6666\u001b[39m,\n    coverFileName: \u001b[32m'bb4382d6-4c3f-462f-bbbe-a7f88afc1436qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m77\u001b[39m,\n    title: \u001b[32m'The Beholder'\u001b[39m,\n    author: \u001b[32m'Anna Bright '\u001b[39m,\n    category: \u001b[32m'Romance'\u001b[39m,\n    price: \u001b[33m3333\u001b[39m,\n    coverFileName: \u001b[32m'5ba1968d-a7f5-4a04-99c2-281088b8532fqq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m78\u001b[39m,\n    title: \u001b[32m'The Last Pirate of New York: A Ghost Ship, a Killer, and the Birth of a Gangster Nation'\u001b[39m,\n    author: \u001b[32m'Rich Cohen'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m1212\u001b[39m,\n    coverFileName: \u001b[32m'716d7202-d166-452a-b998-a17fe2666438qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m79\u001b[39m,\n    title: \u001b[32m`The Ministry of Truth: The Biography of George Orwell's \"1984\"`\u001b[39m,\n    author: \u001b[32m'Dorian Lynskey'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m5874\u001b[39m,\n    coverFileName: \u001b[32m'0e6688cb-47e4-438c-9648-543f174878d5qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m80\u001b[39m,\n    title: \u001b[32m\"Rough Magic: Riding the World's Loneliest Horse Race\"\u001b[39m,\n    author: \u001b[32m'Lara Prior-Palmer'\u001b[39m,\n    category: \u001b[32m'Biography'\u001b[39m,\n    price: \u001b[33m8264\u001b[39m,\n    coverFileName: \u001b[32m'577f11d3-df70-4671-a468-6318da8ec16cqq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m81\u001b[39m,\n    title: \u001b[32m'This Storm'\u001b[39m,\n    author: \u001b[32m'James Ellroy'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m2232\u001b[39m,\n    coverFileName: \u001b[32m'd810fa08-0ed8-4dcb-8158-6f1ab98a45d3qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m83\u001b[39m,\n    title: \u001b[32m'One Night at the Lake'\u001b[39m,\n    author: \u001b[32m' Bethany Chase'\u001b[39m,\n    category: \u001b[32m'Mystery'\u001b[39m,\n    price: \u001b[33m555\u001b[39m,\n    coverFileName: \u001b[32m'fe476d1e-cdc3-404b-913e-a52889d5b9fcqq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m84\u001b[39m,\n    title: \u001b[32m'The Chosen'\u001b[39m,\n    author: \u001b[32m'Taran Matharu '\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m5555\u001b[39m,\n    coverFileName: \u001b[32m'ffa6e013-86ac-4d00-8516-a8fd8bc8ddf5qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m85\u001b[39m,\n    title: \u001b[32m'All of Us with Wings'\u001b[39m,\n    author: \u001b[32m'Michelle Ruiz Keil '\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m555\u001b[39m,\n    coverFileName: \u001b[32m'3618116f-ba09-4172-bc6a-7aa2dbe7d7c4qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m86\u001b[39m,\n    title: \u001b[32m'Soul of the Sword'\u001b[39m,\n    author: \u001b[32m' Julie Kagawa'\u001b[39m,\n    category: \u001b[32m'Fantasy'\u001b[39m,\n    price: \u001b[33m55555\u001b[39m,\n    coverFileName: \u001b[32m'58dbce6c-7c82-4491-be4f-c170867ba4b6qq.jpg'\u001b[39m\n  },\n  {\n    bookId: \u001b[33m90\u001b[39m,\n    title: \u001b[32m'7/1/1993'\u001b[39m,\n    author: \u001b[32m'qwert'\u001b[39m,\n    category: \u001b[32m'Fiction'\u001b[39m,\n    price: \u001b[33m123\u001b[39m,\n    coverFileName: \u001b[32m'Default_image.jpg'\u001b[39m\n  }\n]\n"
+                        },
+                        {
+                          "text": "4\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-19T16:45:39.367Z",
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "C:\\Users\\kunal.s\\OneDrive - Fujiyama Software Solutions Pvt Ltd\\Documents\\Playwright\\playwright\\page\\LoginPage.js",
-                        "column": 29,
-                        "line": 17
-                      }
+                      "startTime": "2023-11-20T12:41:41.884Z",
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "8ee57253404d2f4ca5cd-b42464db78ea67a2d2bd",
-              "file": "homepage_test.spec.js",
-              "line": 12,
-              "column": 7
+              "id": "b8ed526e3f30c58a4cda-1392c8c2243eabea3a4e",
+              "file": "login_page.spec.js",
+              "line": 35,
+              "column": 8
             }
           ]
         }
@@ -135,7 +114,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2023-10-19T16:45:37.850Z",
-    "duration": 10861.988
+    "startTime": "2023-11-20T12:41:40.711Z",
+    "duration": 2180.143,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
   }
 }
