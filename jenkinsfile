@@ -1,4 +1,4 @@
-/* groovylint-disable CompileStatic, LineLength, NestedBlockDepth, NoDef, VariableTypeRequired */
+/* groovylint-disable CompileStatic, GStringExpressionWithinString, LineLength, NestedBlockDepth, NoDef, VariableTypeRequired */
 /* groovylint-disable-next-line CompileStatic */
 // pipeline {
 //     agent any
@@ -39,11 +39,29 @@
 pipeline {
     agent any
 
+    environment {
+        // Define environment variables
+        BASE_URL_API = 'https://bookcart.azurewebsites.net'
+        USER_NAME = 'testUserBdd'
+        USER_PASS = 'Test@123'
+        // Add other environment variables as needed
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 // Checkout code from GitHub
                 git credentialsId: 'jenkins-github-ci-cd', url: 'https://github.com/ks1912/playwright.git', branch: 'feature/azurePipeline'
+            }
+        }
+
+        stage('Set Environment') {
+            steps {
+                // Set environment variables for Node.js
+                sh "export BASE_URL_API=${env.BASE_URL_API}"
+                sh "export USER_NAME=${env.USER_NAME}"
+                sh "export USER_PASS=${env.USER_PASS}"
+                // Add other variable assignments as needed
             }
         }
 
@@ -57,7 +75,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run tests for your Node.js project
-                sh 'npm run headless'
+                sh 'BASE_URL_API=${env.BASE_URL_API} USER_NAME=${env.USER_NAME} npm run headless'
             }
         }
 
