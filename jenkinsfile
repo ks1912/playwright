@@ -1,36 +1,90 @@
+/* groovylint-disable CompileStatic, LineLength, NestedBlockDepth, NoDef, VariableTypeRequired */
+/* groovylint-disable-next-line CompileStatic */
+// pipeline {
+//     agent any
+
+//     stages {
+//         stage('CI - Build and Push Docker Image') {
+//             steps {
+//                 // Checkout code from GitHub
+//                 git branch: 'feature/azurePipeline', url: 'https://github.com/kunalSinghQA/playwright.git'
+
+//                 // Build Docker image
+//                 script {
+//                     def dockerImage = docker.build('kunalfeuji/playwrightapp/', '.')
+//                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+//                         // Push Docker image to Docker Hub
+//                         dockerImage.push()
+//                     }
+//                 }
+//             }
+//         }
+
+//         stage('CD - Deploy to Azure VM') {
+//             steps {
+//                 // Azure login using Azure CLI
+//                 script {
+//                     sh 'az login --service-principal -u <client-id> -p <client-secret> --tenant <tenant-id>'
+//                 }
+
+//                 // Access Azure VM and deploy Docker image
+//                 script {
+//                     sh 'az vm create -g <resource-group> -n <vm-name> --image <image-from-docker-hub> --admin-username <username> --admin-password <password>'
+//                     // Use appropriate commands to pull and run the Docker image on the Azure VM
+//                 }
+//             }
+//         }
+//     }
+// }
 pipeline {
     agent any
 
     stages {
-        stage('CI - Build and Push Docker Image') {
+        stage('Checkout') {
             steps {
                 // Checkout code from GitHub
-                git branch: 'feature/azurePipeline', url: 'https://github.com/kunalSinghQA/playwright.git'
-
-                // Build Docker image
-                script {
-                    def dockerImage = docker.build('kunalfeuji/playwrightapp/', '.')
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-                        // Push Docker image to Docker Hub
-                        dockerImage.push()
-                    }
-                }
+                git credentialsId: 'jenkins-github-ci-cd', url: 'https://github.com/ks1912/playwright.git', branch: 'feature/azurePipeline'
             }
         }
 
-        stage('CD - Deploy to Azure VM') {
+        stage('Install Dependencies') {
             steps {
-                // Azure login using Azure CLI
-                script {
-                    sh 'az login --service-principal -u <client-id> -p <client-secret> --tenant <tenant-id>'
-                }
-
-                // Access Azure VM and deploy Docker image
-                script {
-                    sh 'az vm create -g <resource-group> -n <vm-name> --image <image-from-docker-hub> --admin-username <username> --admin-password <password>'
-                    // Use appropriate commands to pull and run the Docker image on the Azure VM
-                }
+                // Install Node.js dependencies
+                sh 'npm install'
             }
         }
+
+        stage('Run Tests') {
+            steps {
+                // Run tests for your Node.js project
+                sh 'npm run headless'
+            }
+        }
+
+        // stage('Generate Report') {
+        //     steps {
+        //         // Generate report (replace these commands with your actual report generation steps)
+        //         sh 'npm run generate-report'  // Example command
+        //     }
+
+        //     post {
+        //         always {
+        //             // Archive the generated report for later access
+        //             archiveArtifacts artifacts: 'path/to/your/report/*', allowEmptyArchive: true
+        //         }
+        //     }
+        // }
     }
+
+    // // Additional post-build actions or notifications can be added here
+    // post {
+    //     success {
+    //         // For example, send an email on successful build
+    //         emailext(
+    //             to: 'your@email.com',
+    //             subject: 'Node.js Build Success',
+    //             body: 'The Node.js build and tests have passed successfully.'
+    //         )
+    //     }
+    // }
 }
