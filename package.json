@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"npx playwright test"
+    "build": "npx playwright test"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/ks1912/playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.32.2"
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.3",
+    "babel-plugin-istanbul": "^6.1.1",
+    "nyc": "^15.1.0",
+    "playwright-test-coverage": "^1.2.12"
   }
 }
