@@ -1,9 +1,9 @@
 # playwright
 
 
-<h4>API Testing </br>
-BDD Framework
+<h4>Testing all locators</br>
+A Framework to caters all locators
   <ol>
-    <li>Using cuccmber</li>
+    <li>Using locatos</li>
   </ol>
 </h4>
