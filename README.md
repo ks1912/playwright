@@ -36,6 +36,15 @@ playwright-framework/
 │
 ├── config/                     # Playwright configuration
 │
+├── services/
+│   ├── api/
+│      ├── base.api.ts
+│      └── user.api.ts
+│
+├── global/
+│   ├── global-setup.ts
+│   └── global-teardown.ts
+│
 ├── test-results/               # Test execution results
 ├── reports/                    # HTML reports
 │
