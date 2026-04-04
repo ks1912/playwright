@@ -2,10 +2,10 @@
 
 ## 📌 Overview
 
-This is a scalable end-to-end test automation framework built using **Playwright with TypeScript**, following the **Page Object Model (POM)** design pattern. The framework supports UI automation testing, API testing, and comprehensive CI/CD integration for enterprise-level test automation.
+This is a scalable end-to-end test automation framework built using **Playwright with TypeScript**, following the **Page Object Model (POM)** design pattern and **AI Agent Pattern** for intelligent test actions. The framework supports UI automation testing, API testing, and comprehensive CI/CD integration for enterprise-level test automation.
 
 **Repository:** [ks1912/playwright](https://github.com/ks1912/playwright)  
-**Current Branch:** selenium-to-playwright  
+**Current Branch:** agents-with-playwright  
 **Version:** 1.0.0
 
 ---
@@ -13,13 +13,14 @@ This is a scalable end-to-end test automation framework built using **Playwright
 ## 🎯 Key Features
 
 - ✅ **Page Object Model (POM)** - Clean separation of concerns
+- ✅ **AI Agent Pattern** - Intelligent test action encapsulation
 - ✅ **TypeScript Support** - Strong typing and better IDE support
 - ✅ **Multi-browser Testing** - Chromium, Firefox, WebKit
 - ✅ **API Testing** - RESTful API testing capabilities
 - ✅ **Hybrid Testing** - Combined UI + API test scenarios
 - ✅ **Multiple Test Environments** - Admin and User personas with storage state
 - ✅ **Parallel Execution** - Run tests in parallel across multiple browsers
-- ✅ **Custom Fixtures** - Reusable test fixtures
+- ✅ **Custom Fixtures** - Reusable test fixtures with agents
 - ✅ **Global Setup/Teardown** - Pre-test and post-test hooks
 - ✅ **Allure Reporting** - Detailed test reports with Allure
 - ✅ **Docker Support** - Containerized test execution
@@ -31,6 +32,11 @@ This is a scalable end-to-end test automation framework built using **Playwright
 
 ```
 playwright/
+│
+├── agents/                         # AI Agent classes for intelligent test actions
+│   ├── base.agent.ts              # BaseAgent with common functionality
+│   ├── auth.agent.ts              # Authentication agent
+│   └── inventory.agent.ts         # Inventory management agent
 │
 ├── tests/                           # Test specifications
 │   ├── ui/                          # UI test cases
@@ -260,13 +266,39 @@ Fixtures provide:
 - Shared test context
 - Reduced boilerplate
 
-**Usage:**
-```typescript
-import { test } from '../pages/fixture/test.fixture';
+---
 
-test('example', async ({ page, inventoryPage, commands }) => {
-  await inventoryPage.gotoInventoryPage();
-  // Test code here
+### 🤖 AI Agent Pattern
+
+**Latest Addition:** Intelligent agents that encapsulate complex test actions and business logic.
+
+Each agent extends `BaseAgent` and provides:
+- **Domain-specific actions** - Focused on specific business areas
+- **Intelligent decision making** - Can handle conditional logic
+- **Reusable workflows** - Common test scenarios as methods
+- **Clean test code** - Tests read like natural language
+
+**Agent Classes:**
+- `AuthAgent` - Authentication and login workflows
+- `InventoryAgent` - Product inventory management
+- `BaseAgent` - Common agent functionality
+
+**Example:**
+```typescript
+export class AuthAgent extends BaseAgent {
+  async loginAsStandardUser() {
+    await this.login('standard_user', 'secret_sauce');
+  }
+}
+```
+
+**Test Usage:**
+```typescript
+test('Full flow using agents', async ({ authAgent, inventoryAgent }) => {
+  await authAgent.loginAsStandardUser();
+  await inventoryAgent.openInventory();
+  await inventoryAgent.addFirstItemToCart();
+  // Test assertions...
 });
 ```
 
@@ -326,6 +358,32 @@ API classes extend `BaseAPI` with common HTTP methods.
 **Location:** `tests/ui+api/`
 
 Combined UI and API test scenarios for end-to-end workflows.
+
+### Agent-Based Tests
+
+**Location:** `tests/ui/`
+
+**Latest Pattern:** Tests using AI agents for more readable and maintainable test code.
+
+**Example:**
+```typescript
+import { test, expect } from '../../pages/fixture/test.fixture';
+
+test.use({ storageState: undefined }); // Disable global auth
+
+test('Full flow using agents @smoke', async ({ authAgent, inventoryAgent, page }) => {
+  await authAgent.loginAsStandardUser();
+  await inventoryAgent.openInventory();
+  await inventoryAgent.addFirstItemToCart();
+  await expect(page.locator('.shopping_cart_badge')).toBeVisible();
+});
+```
+
+**Benefits:**
+- **Natural Language Tests** - Tests read like business requirements
+- **Reusable Actions** - Common workflows encapsulated in agents
+- **Reduced Boilerplate** - Less setup code in individual tests
+- **Intelligent Logic** - Agents can handle complex decision making
 
 ---
 
@@ -416,12 +474,21 @@ jobs:
 
 ## 🗂️ File Descriptions
 
+### `/agents` Directory
+
+| File | Purpose |
+|------|---------|
+| `base.agent.ts` | Base agent class with common functionality |
+| `auth.agent.ts` | Authentication agent for login workflows |
+| `inventory.agent.ts` | Inventory management agent for product actions |
+
 ### `/tests` Directory
 
 | File | Purpose |
 |------|---------|
-| `ui/login.spec.ts` | Login page UI tests |
-| `ui/inventory.spec.ts` | Inventory page UI tests |
+| `ui/login.spec.ts` | Login page UI tests (POM pattern) |
+| `ui/inventory.spec.ts` | Inventory page UI tests (POM pattern) |
+| `ui/inventory-agent.spec.ts` | Agent-based inventory tests |
 | `api/user.api.ts` | User API tests |
 | `ui+api/users.spec.ts` | Hybrid test scenarios |
 
@@ -544,6 +611,32 @@ test('scenario A', async ({ page }) => {
   // No dependency on other tests
 });
 ```
+
+### 6. Use Agents for Complex Workflows
+
+```typescript
+// ✅ Good - Use agents for readable test flows
+test('E-commerce purchase', async ({ authAgent, inventoryAgent, cartAgent }) => {
+  await authAgent.loginAsStandardUser();
+  await inventoryAgent.addItemToCart('Sauce Labs Backpack');
+  await cartAgent.checkout();
+  // Assertions...
+});
+
+// ❌ Avoid - Too much boilerplate in test
+test('E-commerce purchase', async ({ page }) => {
+  await page.goto('/');
+  await page.fill('#user-name', 'standard_user');
+  // ... 20+ lines of repetitive code
+});
+```
+
+### 7. Agent Design Principles
+
+- **Single Responsibility** - Each agent handles one domain
+- **Composable Actions** - Agents can call other agents
+- **Business Logic Focus** - Agents encapsulate business rules
+- **Test Readability** - Tests should read like acceptance criteria
 
 ---
 
@@ -678,10 +771,19 @@ ISC License - See LICENSE file for details
 - Allure reporting
 - Docker & Jenkins integration
 
+### Version 1.1.0 (Current)
+- ✅ **AI Agent Pattern** - Intelligent test action encapsulation
+- ✅ **AuthAgent** - Authentication workflows
+- ✅ **InventoryAgent** - Product management actions
+- ✅ **Enhanced Fixtures** - Agent integration in test fixtures
+- ✅ **Agent-based Tests** - New test pattern for improved readability
+- ✅ **Branch:** agents-with-playwright
+
 ---
 
 **Last Updated:** April 2026  
-**Maintained by:** QA Automation Team
+**Maintained by:** QA Automation Team  
+**Current Enhancement:** AI Agent Pattern Implementation
 
 ```bash
 BASE_URL=https://example.com
