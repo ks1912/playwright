@@ -55,6 +55,10 @@ playwright/
 │   ├── utils/                       # Utility functions
 │   │   └── commands.ts             # Helper commands for tests
 │   └── constants/                   # Static data & constants
+├── agents/
+│    ├── base.agent.ts
+│    ├── auth.agent.ts
+│    └── inventory.agent.ts
 │
 ├── global/                          # Global test lifecycle hooks
 │   ├── global-setup.ts             # Pre-test setup (login for multiple users)
