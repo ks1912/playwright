@@ -1,4 +1,103 @@
+# 📦 Node Modules
+
 node_modules/
-/test-results/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 🔐 Environment Variables
+
+.env
+.env.*
+!.env.example
+
+# 🎭 Playwright Artifacts
+
+test-results/
+playwright-report/
+blob-report/
+report/
+reports/
+
+# 📸 Screenshots / Videos / Traces
+
+*.png
+*.jpg
+*.jpeg
+*.webm
+*.mp4
+*.zip
+trace/
+
+# 🧪 Coverage Reports
+
+coverage/
+.nyc_output/
+
+# 🏗️ Build Output
+
+dist/
+build/
+out/
+
+# 🧾 Logs
+
+logs/
+*.log
+
+# 🧠 TypeScript
+
+*.tsbuildinfo
+
+# 🖥️ OS Files
+
+.DS_Store
+Thumbs.db
+
+# 🧰 IDE / Editor Settings
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 🔄 Temporary Files
+
+tmp/
+temp/
+
+# 🐳 Docker (if used later)
+
+docker-compose.override.yml
+
+# 📦 Package Lock Files (optional - depends on team preference)
+
+# Uncomment if needed
+
+# package-lock.json
+
+# yarn.lock
+
+# pnpm-lock.yaml
+
+# 🔑 Secrets / Keys
+
+*.pem
+*.key
+*.crt
+
+# 📊 Misc
+
+*.csv
+*.xlsx
+
+# ⚠️ Playwright Cache (optional)
+
+.playwright/
+
+# Playwright
 /playwright-report/
+/blob-report/
 /playwright/.cache/
+/playwright/.auth/
